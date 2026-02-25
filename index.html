@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O-Level Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <section class="card">
+        <h1>O-Level Student Management System</h1>
+        <p class="subtitle">Form 1 to Form 4 academic performance tracking.</p>
+    </section>
+
+    <section class="card">
+        <h2>1) Student Registration</h2>
+        <form id="studentForm">
+            <div class="grid">
+                <div>
+                    <label for="name">Student Full Name</label>
+                    <input id="name" type="text" placeholder="e.g. John Doe" required />
+                </div>
+                <div>
+                    <label for="studentId">Student ID</label>
+                    <input id="studentId" type="text" placeholder="e.g. S001" required />
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select id="gender" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="age">Age</label>
+                    <input id="age" type="number" min="10" max="25" required />
+                </div>
+                <div>
+                    <label for="formLevel">Current Form</label>
+                    <select id="formLevel" required>
+                        <option value="">Select</option>
+                        <option value="1">Form 1</option>
+                        <option value="2">Form 2</option>
+                        <option value="3">Form 3</option>
+                        <option value="4">Form 4</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" style="margin-top: 15px;">Register Student</button>
+        </form>
+        <div id="formMsg" class="message"></div>
+    </section>
+
+    <section class="card">
+        <h2>2) Student List</h2>
+        <div class="toolbar">
+            <input id="searchInput" type="text" placeholder="Search by ID or name" />
+            <select id="filterForm">
+                <option value="">All Forms</option>
+                <option value="1">Form 1</option>
+                <option value="2">Form 2</option>
+                <option value="3">Form 3</option>
+                <option value="4">Form 4</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Form</th>
+                    <th>Avg Score</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody"></tbody>
+        </table>
+        <p id="emptyState" class="muted">No students registered yet.</p>
+    </section>
+
+    <section class="card">
+        <h2>3) Academic Performance</h2>
+        <form id="performanceForm">
+            <div class="grid">
+                <div>
+                    <label for="perfStudentId">Student ID</label>
+                    <input id="perfStudentId" type="text" placeholder="e.g. S001" required />
+                </div>
+                <div>
+                    <label for="perfForm">Form</label>
+                    <select id="perfForm" required>
+                        <option value="">Select</option>
+                        <option value="1">Form 1</option>
+                        <option value="2">Form 2</option>
+                        <option value="3">Form 3</option>
+                        <option value="4">Form 4</option>
+                    </select>
+                </div>
+                <div><label>Math</label><input id="math" type="number" min="0" max="100" required /></div>
+                <div><label>English</label><input id="english" type="number" min="0" max="100" required /></div>
+                <div><label>Science</label><input id="science" type="number" min="0" max="100" required /></div>
+                <div><label>Social Studies</label><input id="social" type="number" min="0" max="100" required /></div>
+            </div>
+            <button type="submit" style="margin-top: 15px;">Add / Update Performance</button>
+        </form>
+        <div id="perfMsg" class="message"></div>
+    </section>
+
+    <section class="card">
+        <h2>4) Student Details</h2>
+        <div id="detailsBox" class="muted">Select "View" from the list to see full history.</div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
